@@ -9,13 +9,13 @@ namespace WebApplication1.Repository
    public interface IPalavraRepository
     {
 
-        IQueryable<Palavra> ReturnAllWords();
+        Task<IQueryable<Palavra>> ReturnAllWords();
 
-        Palavra ReturnOneWord(int id);
+        Task<Palavra> ReturnOneWord(int id);
 
-        void RegisterWord(Palavra palavra);
-        void EditWord(int id,Palavra palavra);
-        void DeleteWord(int id);
+        Task RegisterWord(Palavra palavra);
+        Task EditWord(int id,Palavra palavra);
+        Task DeleteWord(int id);
 
     }
 }

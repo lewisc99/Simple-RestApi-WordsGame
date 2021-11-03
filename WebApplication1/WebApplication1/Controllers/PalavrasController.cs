@@ -23,12 +23,12 @@ namespace WebApplication1.Controllers
 
 
         [HttpGet("",Name ="ReturnAll")]
-        public  ActionResult ReturnAll([FromQuery]string query)
+        public  async Task<ActionResult> ReturnAll([FromQuery]string query)
         {
 
           
 
-            var obj = _dbPalavra.ReturnAllWords();
+            var obj = await _dbPalavra.ReturnAllWords();
 
             return Ok(obj);
 
@@ -36,9 +36,9 @@ namespace WebApplication1.Controllers
 
 
         [HttpGet("{id}")]
-        public ActionResult ReturnOne(int id)
+        public async Task<ActionResult> ReturnOne(int id)
         {
-            var findId = _dbPalavra.ReturnOneWord(id);
+            var findId = await _dbPalavra.ReturnOneWord(id);
 
             if (findId == null)
             {
@@ -50,50 +50,58 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register([FromBody] Palavra palavra)
+        public async Task<ActionResult> Register([FromBody] Palavra palavra)
         {
-            if(palavra == null)
+            if( palavra == null)
+            {
+                return BadRequest();
+            }
+
+            if (!ModelState.IsValid )
             {
                 return BadRequest();
             }
 
 
+            await _dbPalavra.RegisterWord(palavra);
+
+            return Created($"/api/palavras/{palavra.Id}", palavra);
 
 
-            _dbPalavra.RegisterWord(palavra);
-
-            return Created($"/api/palavras/{palavra.Id}",palavra);
         }
 
 
         [HttpPut("{id}",Name ="EditWord")]
-        public ActionResult EditId(int id, [FromBody] Palavra palavra)
+        public async Task<ActionResult> EditId(int id, [FromBody] Palavra palavra)
         {
-
             if (palavra == null)
+            {
+                return BadRequest(); 
+            }
+
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
+        
+            
+                var findId = await  _dbPalavra.ReturnOneWord(id);
 
-            var findId = _dbPalavra.ReturnOneWord(id);
-           
+                if (findId == null)
+                {
+                    return NotFound();
+                }
+            await _dbPalavra.EditWord(id, palavra);
 
-
-            if (findId == null)
-            {
-                return NotFound();
-            }
-            _dbPalavra.EditWord(id, palavra);
-
-            return Ok(palavra);
+                return Ok(palavra);
 
 
         }
 
         [HttpDelete("{id}",Name ="DeleteWord")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var obj = _dbPalavra.ReturnOneWord(id);
+            var obj = await _dbPalavra.ReturnOneWord(id);
 
             if (obj == null)
             {
@@ -101,10 +109,10 @@ namespace WebApplication1.Controllers
             }
 
 
-            _dbPalavra.DeleteWord(id);
+            await  _dbPalavra.DeleteWord(id);
 
 
-         return   RedirectToAction("ReturnAll");
+         return   Ok();
         }
     }
 }

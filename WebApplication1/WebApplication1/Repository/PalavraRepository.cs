@@ -19,53 +19,54 @@ namespace WebApplication1.Repository
             _dbPalavra = palavra;
         }
 
-        public void DeleteWord(int id)
+        public async Task DeleteWord(int id)
         {
-            var returnId = ReturnOneWord(id);
+            var returnId =await ReturnOneWord(id);
 
             if (returnId.Id == id)
             {
                 _dbPalavra.Remove(returnId);
-                _dbPalavra.SaveChanges();
+               await _dbPalavra.SaveChangesAsync();
             }
         }
 
-        public void EditWord(int id, Palavra palavra)
+        public async Task EditWord(int id, Palavra palavra)
         {
-           var returnId =  ReturnOneWord(id);
+           var returnId = await ReturnOneWord(id);
 
             if (returnId.Id == palavra.Id)
             {
+                palavra.Atualizado = DateTime.Now;
                 _dbPalavra.Update(palavra);
-                _dbPalavra.SaveChanges();
+               await _dbPalavra.SaveChangesAsync();
             }
 
         }
 
-        public void RegisterWord(Palavra palavra)
+        public async Task RegisterWord(Palavra palavra)
         {
 
             _dbPalavra.Add(palavra);
 
-            _dbPalavra.SaveChanges();
+           await _dbPalavra.SaveChangesAsync();
         }
 
-        public  IQueryable<Palavra> ReturnAllWords()
+        public async Task<IQueryable<Palavra>> ReturnAllWords()
         {
             
 
-            return (IQueryable<Palavra>)_dbPalavra.palavra.AsNoTracking(); 
+            return await (Task<IQueryable<Palavra>> )  _dbPalavra.palavra.AsNoTracking(); 
 
         }
 
        
 
-        public Palavra ReturnOneWord(int id)
+        public async Task<Palavra> ReturnOneWord(int id)
         {
 
 
 
-            var find = _dbPalavra.palavra.AsNoTracking().FirstOrDefault(bank => bank.Id == id);
+            var find = await _dbPalavra.palavra.AsNoTracking().FirstOrDefaultAsync(bank => bank.Id == id);
 
             return find;
 
