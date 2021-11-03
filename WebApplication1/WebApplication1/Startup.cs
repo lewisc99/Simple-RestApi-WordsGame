@@ -46,6 +46,11 @@ namespace WebApplication1
             services.AddTransient<IPalavraRepository, PalavraRepository>();
 
 
+            services.AddSwaggerGen(c =>
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "PalavraAPI", Version = "v1" }));
+
+
+
 
         }
 
@@ -55,8 +60,12 @@ namespace WebApplication1
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+
             
+            }
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PalavraAPI"));
 
             app.UseHttpsRedirection();
             app.UseRouting();
