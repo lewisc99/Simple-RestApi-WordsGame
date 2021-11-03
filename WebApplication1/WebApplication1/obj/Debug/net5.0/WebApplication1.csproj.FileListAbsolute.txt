@@ -62,3 +62,4 @@ C:\Users\Pichau\Desktop\asp\WebApplication1\WebApplication1\bin\Debug\net5.0\Swa
 C:\Users\Pichau\Desktop\asp\WebApplication1\WebApplication1\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Pichau\Desktop\asp\WebApplication1\WebApplication1\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Pichau\Desktop\asp\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Pichau\Desktop\asp\WebApplication1\WebApplication1\bin\Debug\net5.0\Microsoft.Extensions.PlatformAbstractions.dll

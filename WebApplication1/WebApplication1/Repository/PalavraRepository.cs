@@ -51,11 +51,11 @@ namespace WebApplication1.Repository
            await _dbPalavra.SaveChangesAsync();
         }
 
-        public async Task<IQueryable<Palavra>> ReturnAllWords()
+        public  IQueryable<Palavra> ReturnAllWords()
         {
             
 
-            return await (Task<IQueryable<Palavra>> )  _dbPalavra.palavra.AsNoTracking(); 
+            return  (IQueryable<Palavra> )  _dbPalavra.palavra.AsNoTracking(); 
 
         }
 

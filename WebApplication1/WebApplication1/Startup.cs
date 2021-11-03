@@ -5,10 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Database;
@@ -47,7 +49,13 @@ namespace WebApplication1
 
 
             services.AddSwaggerGen(c =>
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "PalavraAPI", Version = "v1" }));
+            { 
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "PalavraAPI", Version = "v1" });
+            }
+
+            );
+
+
 
 
 

@@ -9,7 +9,7 @@ namespace WebApplication1.Repository
    public interface IPalavraRepository
     {
 
-        Task<IQueryable<Palavra>> ReturnAllWords();
+       IQueryable<Palavra> ReturnAllWords();
 
         Task<Palavra> ReturnOneWord(int id);
 

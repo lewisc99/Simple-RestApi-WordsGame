@@ -9,6 +9,8 @@ using WebApplication1.Repository;
 namespace WebApplication1.Controllers
 {
 
+    //Controlador responsável por gerenciar os Requests.
+
     [ApiController]
     [Route("api/[Controller]")]
     public class PalavrasController : ControllerBase
@@ -22,13 +24,19 @@ namespace WebApplication1.Controllers
         }
 
 
+
+
+
+
         [HttpGet("",Name ="ReturnAll")]
-        public  async Task<ActionResult> ReturnAll([FromQuery]string query)
+        public ActionResult ReturnAll([FromQuery]string query)
         {
+            
+           
+
+            var obj =  _dbPalavra.ReturnAllWords();
 
           
-
-            var obj = await _dbPalavra.ReturnAllWords();
 
             return Ok(obj);
 
@@ -57,7 +65,7 @@ namespace WebApplication1.Controllers
                 return BadRequest();
             }
 
-            if (!ModelState.IsValid )
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
