@@ -1,7 +1,7 @@
 # ASPNET Core Web API REST WordsGame
 
-projeto básico , desenvolvimento de aplicações web com ASP.NET WEB API 5
-usando os  fundamentos e a utilização do framework.
+Este projeto tem como foco o desenvolvimento de aplicações web utilizando o ASP.NET WEB API 5, através da utilização dos seus fundamentos e recursos disponíveis no framework. O objetivo principal é a elaboração de um estudo básico que proporcione um entendimento sólido sobre a tecnologia e suas principais características, além de capacitar o desenvolvedor a criar soluções web mais avançadas. Com o aprimoramento das habilidades técnicas e conhecimentos relacionados à programação web, é possível desenvolver projetos mais robustos e desafiadores. Dessa forma, este projeto é essencial para quem busca se atualizar no mercado de tecnologia e aprimorar sua carreira como desenvolvedor web.
+
 <br />
 <br />
 serviços utilizadas:
@@ -23,14 +23,9 @@ Entity Framework</br>
 <br/>
 <br/>
 
-
-
 <br/>
 ## 🚀 Tecnologias utilizadas <br/>
 <br/>
-
-
-
 - C#  asp net Core Web API<br/>
 - Sql Server <br/>
 - html e css e um pouco de Javascript <br/>
