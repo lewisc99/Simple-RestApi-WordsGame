@@ -1,12 +1,13 @@
 # ASPNET Core Web API REST WordsGame
 
-<h3>Descrição em Português </h3>
-<p>Este projeto tem como foco o desenvolvimento de aplicações web utilizando o ASP.NET WEB API 5, através da utilização dos seus fundamentos e recursos disponíveis no framework. O objetivo principal é a elaboração de um estudo básico que proporcione um entendimento sólido sobre a tecnologia e suas principais características, além de capacitar o desenvolvedor a criar soluções web mais avançadas. Com o aprimoramento das habilidades técnicas e conhecimentos relacionados à programação web, é possível desenvolver projetos mais robustos e desafiadores. Dessa forma, este projeto é essencial para quem busca se atualizar no mercado de tecnologia e aprimorar sua carreira como desenvolvedor web. </p>
 
 <h3>Description English</h3>
 <p>
     This project focuses on the development of web applications using ASP.NET WEB API 5, using its fundamentals and resources available in the framework. The main objective is to prepare a basic study that provides a solid understanding of the technology and its main characteristics, in addition to enabling the developer to create more advanced web solutions. With the improvement of technical skills and knowledge related to web programming, it is possible to develop more robust and challenging projects. Thus, this project is essential for anyone looking to update themselves in the technology market and improve their career as a web developer.
     </p>
+
+<h3>Descrição em Português </h3>
+<p>Este projeto tem como foco o desenvolvimento de aplicações web utilizando o ASP.NET WEB API 5, através da utilização dos seus fundamentos e recursos disponíveis no framework. O objetivo principal é a elaboração de um estudo básico que proporcione um entendimento sólido sobre a tecnologia e suas principais características, além de capacitar o desenvolvedor a criar soluções web mais avançadas. Com o aprimoramento das habilidades técnicas e conhecimentos relacionados à programação web, é possível desenvolver projetos mais robustos e desafiadores. Dessa forma, este projeto é essencial para quem busca se atualizar no mercado de tecnologia e aprimorar sua carreira como desenvolvedor web. </p>
 
 <br />
 <br />
